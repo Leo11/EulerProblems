@@ -103,18 +103,20 @@ public class Utilities {
 	}
 
 	/**
-	 * This method will determine if a given string is a pallindrome.
+	 * This method will determine if a given string is a palindrome.
 	 * 
 	 * @param word
-	 *            The word that you want to test for pallindromeness.
-	 * @return If the word is a pallindrome.
+	 *            The word that you want to test for palindromeness.
+	 * @return If the word is a palindrome.
 	 */
 	public static Boolean isPalindrome(String word) {
-		boolean isPally = true;
 
+		boolean isPally = true;
 		char[] temp = word.toCharArray();
 
-		if (temp.length % 2 == 0) {
+		if (temp.length == 0) {
+			isPally = false;
+		} else {
 			for (int i = 0; i < temp.length / 2; i++) {
 				if (!(temp[i] == temp[temp.length - i - 1])) {
 					isPally = false;

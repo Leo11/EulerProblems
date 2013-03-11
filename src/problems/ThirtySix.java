@@ -19,16 +19,15 @@ import resources.Utilities;
 public class ThirtySix {
 
 	public static void main(String[] args) {
-		
+
 		long sum = 0;
-		for(int i = 100; i < 1000000; i++){
+		for (int i = 0; i < 1000000; i++) {
 			String binary = Integer.toBinaryString(i);
-			if(Utilities.isPalindrome(i+"") && Utilities.isPalindrome(binary)){
+			if (Utilities.isPalindrome(i + "")
+					&& Utilities.isPalindrome(binary)) {
 				sum += i;
 			}
 		}
 		System.out.println(sum);
-
 	}
-
 }

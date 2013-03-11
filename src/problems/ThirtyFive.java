@@ -21,21 +21,18 @@ import resources.Utilities;
  */
 public class ThirtyFive {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		int count = 0;
 		List<Integer> list = new ArrayList<Integer>();
-		
+
 		for (int i = 2; i < 1000000; i++) {
-			
+
 			boolean circular = true;
 			for (int n : Rotation.rotations(i)) {
 				if (!Utilities.isPrime((n))) {
 					circular = false;
-					break;		
+					break;
 				}
 			}
 			if (circular) {
@@ -44,8 +41,5 @@ public class ThirtyFive {
 			}
 		}
 		System.out.println(count);
-		System.out.println(list);
-
 	}
-
 }
