@@ -76,7 +76,9 @@ public class Utilities {
 	 */
 	public static boolean isPrime(Long number) {
 
-		if (number == 2) {
+		if (number == 1) {
+			return false;
+		} else if (number == 2) {
 			return true;
 		} else if (number % 2 == 0) {
 			return false;
