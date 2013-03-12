@@ -90,6 +90,28 @@ public class MapMath {
 	}
 
 	/**
+	 * Basic equals function for the Mapmath class
+	 * @param map1 First map
+	 * @param map2 Second map
+	 * @return Whether or not the two maps are equal
+	 */
+	public static boolean equals(Map<Integer, Integer> map1,
+			Map<Integer, Integer> map2) {
+		boolean result = true;
+
+		if (!(map1.size() == map2.size())) {
+			result = false;
+		} else {
+			for (Integer i : map1.keySet()) {
+				if (!(map1.get(i) == map2.get(i))) {
+					result = false;
+				}
+			}
+		}
+		return result;
+	}
+
+	/**
 	 * The following method will take a string such as "1234" and convert it
 	 * into a map to be used in the mapMath funcitons. For instance "1234" will
 	 * become {1=4,2=3,3=2,4=1}

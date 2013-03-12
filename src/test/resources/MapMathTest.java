@@ -84,4 +84,48 @@ public class MapMathTest {
 			Assert.assertEquals(resultMap.get(i), testMap.get(i));
 		}
 	}
+	
+	@Test
+	public void testEquals(){
+		
+		Map<Integer, Integer> map1 = new HashMap<Integer, Integer>();
+		map1.put(1,0);
+		Map<Integer, Integer> map2 = new HashMap<Integer, Integer>();
+		map2.put(1,0);
+		Assert.assertTrue(MapMath.equals(map1, map2));
+	}
+	@Test
+	public void testEquals2(){
+		
+		Map<Integer, Integer> map1 = new HashMap<Integer, Integer>();
+		map1.put(1,1);
+		map1.put(2,0);
+		Map<Integer, Integer> map2 = new HashMap<Integer, Integer>();
+		map2.put(1,1);
+		map2.put(2,0);
+		Assert.assertTrue(MapMath.equals(map1, map2));
+	}
+	@Test
+	public void testEquals3(){
+		
+		Map<Integer, Integer> map1 = new HashMap<Integer, Integer>();
+		map1.put(1,0);
+		map1.put(2,0);
+		Map<Integer, Integer> map2 = new HashMap<Integer, Integer>();
+		map2.put(1,1);
+		map2.put(2,0);
+		Assert.assertFalse(MapMath.equals(map1, map2));
+	}
+	@Test
+	public void testEquals4(){
+		
+		Map<Integer, Integer> map1 = new HashMap<Integer, Integer>();
+		map1.put(1,0);
+		map1.put(2,1);
+		Map<Integer, Integer> map2 = new HashMap<Integer, Integer>();
+		map2.put(1,0);
+		map2.put(2,1);
+		map2.put(3,3);
+		Assert.assertFalse(MapMath.equals(map1, map2));
+	}
 }
