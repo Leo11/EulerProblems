@@ -3,7 +3,6 @@ package problems;
 import java.util.Map;
 
 import resources.FibonacciLarge;
-import resources.MapMath;
 
 /**
  * http://projecteuler.net/problem=25
@@ -15,8 +14,7 @@ import resources.MapMath;
  */
 public class TwentyFive {
 
-	public static void main(String[] args) {
-
+	public static int findFirstFibWithNDigits(int n) {
 		FibonacciLarge fib = new FibonacciLarge();
 		int count = 0;
 		boolean found = false;
@@ -24,10 +22,13 @@ public class TwentyFive {
 			count++;
 			Map<Integer, Integer> map = fib.findNthFib(count);
 			if (map.size() == 1000) {
-				System.out.println(MapMath.printAsNumber(map));
-				System.out.println(count);
 				found = true;
 			}
 		}
+		return count;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(findFirstFibWithNDigits(1000));
 	}
 }

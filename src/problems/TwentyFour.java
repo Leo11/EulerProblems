@@ -22,18 +22,26 @@ import java.util.TreeSet;
  */
 public class TwentyFour {
 
-	public static void main(String[] args) {
+	public static String findNthLexicographicPermutation(String digits, int n) {
+
 		resources.Permutation permutationGenerator = new resources.Permutation();
-		permutationGenerator.permute("0123456789");
+		permutationGenerator.permute(digits);
 		List<String> permutations = permutationGenerator.results;
 		Set<String> treeSet = new TreeSet<String>(permutations);
 
 		int count = 1;
+		String result = "";
 		for (String s : treeSet) {
-			if (count == 1000000) {
-				System.out.println(s);
+			if (count == n) {
+				result = s;
 			}
 			count++;
 		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(findNthLexicographicPermutation("0123456789",
+				1000000));
 	}
 }

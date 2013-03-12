@@ -25,7 +25,7 @@ import java.util.TreeSet;
  * 
  * What is the total of all the name scores in the file?
  * 
- * @author Leo
+ * @author Leo Rausch
  * 
  */
 public class TwentyTwo {
@@ -111,15 +111,13 @@ public class TwentyTwo {
 
 	}
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		String path = "src/Problem22_names.txt";
 
 		List<String> names = loadList(path);
 		names = stripQuotes(names);
+
 		Set<String> orderedNames = new TreeSet<String>(names);
 
 		Map<Integer, String> mapWithIndexes = new HashMap<Integer, String>();

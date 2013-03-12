@@ -21,12 +21,11 @@ import resources.Utilities;
  */
 public class ThirtyFive {
 
-	public static void main(String[] args) {
-
+	public static int countCirculerPrimesBelowN(int limit) {
 		int count = 0;
 		List<Integer> list = new ArrayList<Integer>();
 
-		for (int i = 2; i < 1000000; i++) {
+		for (int i = 2; i < limit; i++) {
 
 			boolean circular = true;
 			for (int n : Rotation.rotations(i)) {
@@ -40,6 +39,10 @@ public class ThirtyFive {
 				count++;
 			}
 		}
-		System.out.println(count);
+		return count;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(countCirculerPrimesBelowN(1000000));
 	}
 }

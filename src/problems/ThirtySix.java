@@ -18,16 +18,22 @@ import resources.Utilities;
  */
 public class ThirtySix {
 
-	public static void main(String[] args) {
-
+	public static long findPalindromicDualBase(int limit) {
 		long sum = 0;
-		for (int i = 0; i < 1000000; i++) {
+
+		for (int i = 0; i < limit; i++) {
 			String binary = Integer.toBinaryString(i);
 			if (Utilities.isPalindrome(i + "")
 					&& Utilities.isPalindrome(binary)) {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		return sum;
+	}
+
+	public static void main(String[] args) {
+
+		System.out.println(findPalindromicDualBase(100000));
+
 	}
 }

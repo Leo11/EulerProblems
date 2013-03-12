@@ -36,7 +36,7 @@ public class Twenty {
 
 		int factorial = 100;
 
-		long summation = Utilities
+		int summation = (int) Utilities
 				.getSummationOfMap(solveFactorials(factorial));
 		System.out.println("The sum of the digits of " + factorial + "! is "
 				+ summation);

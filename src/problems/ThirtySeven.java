@@ -26,11 +26,10 @@ public class ThirtySeven {
 		return (n - (n % 10)) / 10;
 	}
 
-	public static void main(String[] args) {
-
+	public static int findSumLeftRightTruncatablePrimes() {
 		int count = 0;
 		int sum = 0;
-		int counter = 10;
+		int counter = 11;
 
 		while (count < 11) {
 			int n = counter;
@@ -55,12 +54,15 @@ public class ThirtySeven {
 				}
 			}
 			if (prime) {
-				System.out.println(counter);
 				sum += counter;
 				count++;
 			}
-			counter++;
+			counter += 2;
 		}
-		System.out.println(sum);
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(findSumLeftRightTruncatablePrimes());
 	}
 }

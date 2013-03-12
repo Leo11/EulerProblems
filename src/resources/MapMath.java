@@ -91,12 +91,16 @@ public class MapMath {
 
 	/**
 	 * Basic equals function for the Mapmath class
-	 * @param map1 First map
-	 * @param map2 Second map
+	 * 
+	 * @param map1
+	 *            First map
+	 * @param map2
+	 *            Second map
 	 * @return Whether or not the two maps are equal
 	 */
 	public static boolean equals(Map<Integer, Integer> map1,
 			Map<Integer, Integer> map2) {
+
 		boolean result = true;
 
 		if (!(map1.size() == map2.size())) {

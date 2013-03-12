@@ -23,24 +23,23 @@ package problems;
  */
 public class Thirty {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
+	public static long sumOfSumOfFifthPowers() {
 		long totalSum = 0;
-		for(int i = 2; i < (5 * Math.pow(9, 5)); i++){
+		for (int i = 2; i < (5 * Math.pow(9, 5)); i++) {
 			int tempSum = 0;
 			char[] array = (i + "").toCharArray();
-			for(char c : array){
-				tempSum += Math.pow((int)c - 48, 5);
+			for (char c : array) {
+				tempSum += Math.pow((int) c - 48, 5);
 			}
-			if(tempSum == i){
-				System.out.println(i);
+			if (tempSum == i) {
 				totalSum += i;
 			}
 		}
-		System.out.println(totalSum);
+		return totalSum;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(sumOfSumOfFifthPowers());
 	}
 
 }

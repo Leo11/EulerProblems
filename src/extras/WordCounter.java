@@ -46,7 +46,7 @@ public class WordCounter {
 
 		try {
 			input = new Scanner(new File(filePath));
-			
+
 			while (input.hasNextLine()) {
 
 				String temp = input.nextLine();
@@ -74,7 +74,7 @@ public class WordCounter {
 		} catch (FileNotFoundException e) {
 			System.out.println("Count not find the specified file.");
 		}
-		
+
 		return wordStats;
 	}
 
@@ -92,13 +92,13 @@ public class WordCounter {
 		String lowercaseWord = word.toLowerCase();
 		char[] array = lowercaseWord.toCharArray();
 		StringBuffer buffer = new StringBuffer();
-		
+
 		for (int i = 0; i < array.length; i++) {
 			if ((int) array[i] > 96 && (int) array[i] < 123) {
 				buffer.append(array[i]);
 			}
 		}
-		
+
 		return buffer.toString();
 	}
 
@@ -112,7 +112,8 @@ public class WordCounter {
 	 *            The top n values that you would like to print out. Ex.) 10
 	 *            will print out the words with the top 10 usage.
 	 */
-	public static void prettyPrintTopN(final Map<String, Integer> countWords, final int topN) {
+	public static void prettyPrintTopN(final Map<String, Integer> countWords,
+			final int topN) {
 
 		Set<Integer> topSet = new TreeSet<Integer>(Collections.reverseOrder());
 		topSet.addAll(countWords.values());
