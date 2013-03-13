@@ -42,7 +42,7 @@ public class WordCounter {
 	public static Map<String, Integer> countWords(final String filePath) {
 
 		Map<String, Integer> wordStats = new HashMap<String, Integer>();
-		Scanner input;
+		Scanner input = null;
 
 		try {
 			input = new Scanner(new File(filePath));
@@ -69,10 +69,10 @@ public class WordCounter {
 					}
 				}
 			}
-			input.close();
-
 		} catch (FileNotFoundException e) {
 			System.out.println("Count not find the specified file.");
+		} finally {
+			input.close();
 		}
 
 		return wordStats;
