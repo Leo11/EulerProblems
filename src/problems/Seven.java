@@ -8,7 +8,7 @@ import resources.Utilities;
  * listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that
  * the 6th prime is 13.
  * 
- * What is the 10 001st prime number?
+ * What is the 10,001st prime number?
  * 
  * @author Leo Rausch
  * 
@@ -24,10 +24,14 @@ public class Seven {
 	 */
 	public static int nthPrime(int number) {
 
-		// number of primes we have found;
+		/*
+		 *  number of primes we have found;
+		 */
 		int primeCounter = 0;
 
-		// current integer we are checking for primality
+		/*
+		 *  current integer we are checking for primality
+		 */
 		int counter = 0;
 		while (primeCounter <= number) {
 			counter++;

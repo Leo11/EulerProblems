@@ -6,7 +6,7 @@ import java.util.Map;
 import resources.Utilities;
 
 /**
- * Project Euler Problem 20
+ * Project Euler Problem 20 http://projecteuler.net/problem=20
  * 
  * n! means n*(n-1)* ...*3*2*1
  * 
@@ -38,6 +38,7 @@ public class Twenty {
 
 		int summation = (int) Utilities
 				.getSummationOfMap(solveFactorials(factorial));
+		
 		System.out.println("The sum of the digits of " + factorial + "! is "
 				+ summation);
 

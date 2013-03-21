@@ -3,6 +3,7 @@ package problems;
 import resources.Utilities;
 
 /**
+ * Project Euler Problem http://projecteuler.net/problem=37
  * The number 3797 has an interesting property. Being prime itself, it is
  * possible to continuously remove digits from left to right, and remain prime
  * at each stage: 3797, 797, 97, and 7. Similarly we can work from right to
@@ -18,12 +19,23 @@ import resources.Utilities;
  */
 public class ThirtySeven {
 
-	public static int removeLeft(int n) {
-		return (int) (n % Math.pow(10, (n + "").length() - 1));
+	
+	/**
+	 * This method will remove the left most digit from an integer. For instance, if you have the number 1234. This method will return 234.
+	 * @param number The number you wish to remove the left-most digit from.
+	 * @return A number which consists of the original number with the left most digit removed. Ex.) 1234 = 234;
+	 */
+	public static int removeLeft(int number) {
+		return (int) (number % Math.pow(10, (number + "").length() - 1));
 	}
 
-	public static int removeRight(int n) {
-		return (n - (n % 10)) / 10;
+	/**
+	 * This method will rmeove the right most digit from an integer. For instance, if you have the number 1234. This moethod will return 123.
+	 * @param number The number you wish to remove the right-most digit from.
+	 * @return A number which consists of the original number with the right most digit removed. Ex.) 1234 = 123;
+	 */
+	public static int removeRight(int number) {
+		return (number - (number % 10)) / 10;
 	}
 
 	public static int findSumLeftRightTruncatablePrimes() {
@@ -31,32 +43,51 @@ public class ThirtySeven {
 		int sum = 0;
 		int counter = 11;
 
+		/*
+		 * Only find the first 11 dual truncatable primes, this "magic number" is because of the given problem.
+		 */
 		while (count < 11) {
-			int n = counter;
+			
+			int left = counter;
+			int right = counter;
 			boolean prime = true;
+			
+			/*
+			 * Figure out if the number is left prime truncatable.
+			 */
 			for (int i = (counter + "").length(); i > 0; i--) {
 
-				if (!Utilities.isPrime(n)) {
+				if (!Utilities.isPrime(left)) {
 					prime = false;
-					break;
+					//break;
 				} else {
-					n = removeLeft(n);
+					left = removeLeft(left);
+				}
+				
+				if (!Utilities.isPrime(right)) {
+					prime = false;
+					//break;
+				} else {
+					right = removeRight(right);
 				}
 			}
-			n = counter;
-			for (int i = (counter + "").length(); i > 0; i--) {
+			
+			
+			
+			/*
+			 * Figure out if the number is right prime truncatable. 
+			 */
+			//for (int i = (counter + "").length(); i > 0; i--) {
 
-				if (!Utilities.isPrime(n)) {
-					prime = false;
-					break;
-				} else {
-					n = removeRight(n);
-				}
-			}
+				
+			//}
 			if (prime) {
 				sum += counter;
 				count++;
 			}
+			/*
+			 * Add 2 because an even number will not be prime. 
+			 */
 			counter += 2;
 		}
 		return sum;

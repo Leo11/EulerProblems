@@ -1,7 +1,7 @@
 package problems;
 
 /**
- * Project Euler Problem 8
+ * Project Euler Problem 8 http://projecteuler.net/problem=8
  * 
  * Find the greatest product of five consecutive digits in the 1000-digit
  * number.
@@ -10,10 +10,6 @@ package problems;
  * 
  */
 public class Eight {
-
-	/**
-	 * @param args
-	 */
 
 	public static String info = "7316717653133062491922511967442657474235534"
 			+ "9194934969835203127745063262395783180169848018694788518438586156"
@@ -31,6 +27,7 @@ public class Eight {
 			+ "9624554443629812309878799272442849091888458015616609791913387549"
 			+ "9200524063689912560717606058861164671094050775410022569831552000"
 			+ "5593572972571636269561882670428252483600823257530420752963450";
+	
 	public static char[] infoChar = info.toCharArray();
 
 	public static int[] charArrayToIntArray(char[] charArray) {
@@ -69,10 +66,10 @@ public class Eight {
 	public static void main(String[] args) {
 
 		int digits = 5;
+		
 		int largest = biggest(charArrayToIntArray(infoChar), digits);
+		
 		System.out.println("The greatest product of " + digits
 				+ " consecutive digits in the number is " + largest);
-
 	}
-
 }

@@ -6,7 +6,7 @@ import resources.Rotation;
 import resources.Utilities;
 
 /**
- * Project Euler Problem 35
+ * Project Euler Problem 35 http://projecteuler.net/problem=35
  * 
  * The number, 197, is called a circular prime because all rotations of the
  * digits: 197, 971, and 719, are themselves prime.
@@ -21,13 +21,24 @@ import resources.Utilities;
  */
 public class ThirtyFive {
 
+	/**
+	 * This method will count the number of circular primes below a limit. Ex.)
+	 * The number, 197, is called a circular prime because all rotations of the
+	 * digits: 197, 971, and 719, are themselves prime.
+	 * 
+	 * @param limit
+	 *            The largest number to count up to.
+	 * @return The number of circular primes below the limit.
+	 */
 	public static int countCirculerPrimesBelowN(int limit) {
+
 		int count = 0;
 		List<Integer> list = new ArrayList<Integer>();
 
 		for (int i = 2; i < limit; i++) {
 
 			boolean circular = true;
+
 			for (int n : Rotation.rotations(i)) {
 				if (!Utilities.isPrime((n))) {
 					circular = false;

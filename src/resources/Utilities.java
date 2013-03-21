@@ -1,8 +1,12 @@
 package resources;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 public class Utilities {
 
@@ -152,6 +156,13 @@ public class Utilities {
 		return summation;
 	}
 
+	public static long getSummationOfSet(Set<Long> set) {
+		long summation = 0;
+		for (long i : set) {
+			summation += i;
+		}
+		return summation;
+	}
 	/**
 	 * This method will do the following to a map of integers. Say you have a
 	 * map of Integer, Integer where the first integer is the integer place
@@ -188,4 +199,26 @@ public class Utilities {
 		return map;
 	}
 
+	/**
+	 * This method will tell you if a string is pandigital to specific set of
+	 * numbers.
+	 * 
+	 * @param pandigitalValues
+	 *            The values that the set must be pandigital for, Ex.) "12345".
+	 * @param tentativePandigital
+	 *            The string that you are checking for pandigitalness.
+	 * @return Whether or not the given string is pandigital to the set of
+	 *         letters.
+	 */
+	public static boolean isPandigital(String pandigitalValues,
+			String tentativePandigital) {
+
+		char[] valueArray = pandigitalValues.toCharArray();
+		char[] tentativeArray = tentativePandigital.toCharArray();
+
+		Arrays.sort(valueArray);
+		Arrays.sort(tentativeArray);
+
+		return Arrays.equals(valueArray, tentativeArray);
+	}
 }

@@ -3,7 +3,7 @@ package problems;
 import resources.Utilities;
 
 /**
- * Project Euler Problem 36
+ * Project Euler Problem 36 http://projecteuler.net/problem=36
  * 
  * The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.
  * 
@@ -18,13 +18,22 @@ import resources.Utilities;
  */
 public class ThirtySix {
 
+	/**
+	 * Finds the sum of all numbers, less than the limit which are palindromic
+	 * in base 10 and base 2.
+	 * 
+	 * @param limit
+	 *            The max number that you want to search for dual base
+	 *            palidromicness.
+	 * @return The sum of all numbers, less than the limit which are plaindromic
+	 *         in base 10 and base 2.
+	 */
 	public static long findPalindromicDualBase(int limit) {
-		long sum = 0;
 
+		long sum = 0;
 		for (int i = 0; i < limit; i++) {
-			String binary = Integer.toBinaryString(i);
 			if (Utilities.isPalindrome(i + "")
-					&& Utilities.isPalindrome(binary)) {
+					&& Utilities.isPalindrome(Integer.toBinaryString(i))) {
 				sum += i;
 			}
 		}
@@ -32,8 +41,6 @@ public class ThirtySix {
 	}
 
 	public static void main(String[] args) {
-
 		System.out.println(findPalindromicDualBase(100000));
-
 	}
 }

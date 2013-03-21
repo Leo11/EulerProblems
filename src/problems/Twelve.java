@@ -61,6 +61,7 @@ public class Twelve {
 		long startTime = System.currentTimeMillis();
 
 		int numberOfDivisors = 500;
+		
 		System.out.println("The first triangle number with " + numberOfDivisors
 				+ " divisors is "
 				+ getFirstTriangleNumberWithNthDivisors(numberOfDivisors));
@@ -70,5 +71,4 @@ public class Twelve {
 				+ "ms");
 
 	}
-
 }

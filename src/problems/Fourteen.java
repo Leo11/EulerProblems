@@ -1,7 +1,7 @@
 package problems;
 
 /**
- * Project Euler Problem 14
+ * Project Euler Problem 14 http://projecteuler.net/problem=14
  * 
  * The following iterative sequence is defined for the set of positive
  * longegers:

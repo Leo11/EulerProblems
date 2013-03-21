@@ -5,7 +5,7 @@ import java.util.Map;
 import resources.FibonacciLarge;
 
 /**
- * http://projecteuler.net/problem=25
+ * Project Euler Problem 25 http://projecteuler.net/problem=25
  * 
  * What is the first term in the Fibonacci sequence to contain 1000 digits?
  * 

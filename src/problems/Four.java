@@ -27,8 +27,10 @@ public class Four {
 	 */
 	public static String findLargestPalindrome(int digits) {
 
-		// This gives us the base number to start with and the number to end
-		// with Ex. 3 digits = 100 so start off with 100-999
+		/*
+		 * This gives us the base number to start with and the number to endwith
+		 * Ex. 3 digits = 100 so start off with 100-999
+		 */
 		int start = (int) Math.pow(10, digits - 1);
 		int end = (int) Math.pow(10, digits);
 
@@ -37,8 +39,10 @@ public class Four {
 		for (int i = start; i < end; i++) {
 			for (int j = start; j < end; j++) {
 
-				// First get the string representation so we can see if its a
-				// palindrome
+				/*
+				 * First get the string representation so we can see if its a
+				 * palindrome
+				 */
 				String newPalindrome = "" + (i * j);
 				if (Utilities.isPalindrome(newPalindrome)) {
 					if (Integer.parseInt(newPalindrome) > Integer
@@ -57,6 +61,7 @@ public class Four {
 		long startTime = System.currentTimeMillis();
 
 		int digits = 3;
+		
 		System.out
 				.println("The largest palindrome made from the product of two-"
 						+ digits + " digit numbers is "

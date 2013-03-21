@@ -1,6 +1,8 @@
 package problems;
 
 /**
+ * Project Euler Problem 30 http://projecteuler.net/problem=30
+ * 
  * Surprisingly there are only three numbers that can be written as the sum of
  * fourth powers of their digits:
  * 
@@ -16,7 +18,6 @@ package problems;
  * 
  * Find the sum of all the numbers that can be written as the sum of fifth
  * powers of their digits.
- * 
  * 
  * @author Leo Rausch
  * 
@@ -41,5 +42,4 @@ public class Thirty {
 	public static void main(String[] args) {
 		System.out.println(sumOfSumOfFifthPowers());
 	}
-
 }

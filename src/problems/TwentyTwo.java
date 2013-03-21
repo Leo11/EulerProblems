@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Project Euler Problem 22
+ * Project Euler Problem 22 http://projecteuler.net/problem=22
  * 
  * Using names.txt (right click and 'Save Link/Target As...'), a 46K text file
  * containing over five-thousand first names, begin by sorting it longo
@@ -65,7 +65,7 @@ public class TwentyTwo {
 
 	public static List<String> loadList(String path) {
 		List<String> list = new ArrayList<String>();
-		Scanner input;
+		Scanner input = null;
 		try {
 			input = new Scanner(new File(path));
 			while (input.hasNextLine()) {
@@ -75,11 +75,13 @@ public class TwentyTwo {
 					list.add(tempList[i]);
 				}
 			}
-			input.close();
+			
 
 		} catch (FileNotFoundException e1) {
 			System.out
 					.println("Could not find the specified file for the Sensitive Data list");
+		} finally{
+			input.close();
 		}
 		return list;
 	}

@@ -11,7 +11,7 @@ import java.util.Scanner;
 import resources.MapMath;
 
 /**
- * Project Euler Problem 13
+ * Project Euler Problem 13 http://projecteuler.net/problem=13
  * 
  * Work out the first ten digits of the sum of the following one-hundred
  * 50-digit numbers.
@@ -43,16 +43,17 @@ public class Thirteen {
 		return list;
 	}
 
-	public static void main(String[] args) {
-		String path = "src/Problem13_LargeSum.txt";
-		List<String> numbers = loadList(path);
-
+	public static String findSummationOfList(List<String> numbers) {
 		Map<Integer, Integer> result = new HashMap<Integer, Integer>();
 		result.put(1, 0);
 		for (String s : numbers) {
 			result = MapMath.addMaps(result, MapMath.convertNumberString(s));
 		}
-		System.out.println(MapMath.printAsNumber(result));
+		return MapMath.printAsNumber(result);
 	}
 
+	public static void main(String[] args) {
+		String path = "src/Problem13_LargeSum.txt";
+		System.out.println(findSummationOfList(loadList(path)));
+	}
 }

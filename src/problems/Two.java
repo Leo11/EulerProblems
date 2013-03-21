@@ -46,9 +46,10 @@ public class Two {
 			 * program
 			 */
 			if (number < limit) {
-
-				// Check if the calculated fibonacci number is even and add it
-				// to the sum
+				/*
+				 * Check if the calculated fibonacci number is even and add it
+				 * to the sum
+				 */
 				if (number % 2 == 0) {
 					sum += number;
 				}
@@ -71,6 +72,5 @@ public class Two {
 		long endTime = System.currentTimeMillis();
 		System.out.println("Time taken to complete = " + (endTime - startTime)
 				+ "ms");
-
 	}
 }

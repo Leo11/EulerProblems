@@ -50,5 +50,4 @@ public class Three {
 		System.out.println("Time taken to complete = " + (endTime - startTime)
 				+ "ms");
 	}
-
 }
