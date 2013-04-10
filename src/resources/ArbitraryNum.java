@@ -18,33 +18,49 @@ public class ArbitraryNum {
 
 	private Map<Integer, Integer> values;
 
-
+	/**
+	 * Basic constructor for creating a blank number.
+	 */
 	public ArbitraryNum() {
 		super();
 		this.values = new HashMap<Integer, Integer>();
 	}
 
+	/**
+	 * Constructor for turning an existing string into a ArbitraryNum.
+	 * 
+	 * @param value
+	 *            The String value that you want to make an ArbitraryNum out of.
+	 */
 	public ArbitraryNum(String value) {
 		super();
 		ArbitraryNum temp = convertNumberString(value);
 		this.values = temp.values;
 	}
 
-	public ArbitraryNum(ArbitraryNum n) {
+	/**
+	 * Construct an arbitrary num out of an existing ArbitraryNum.
+	 * 
+	 * @param num
+	 *            The existing arbitrary num that you want to copy.
+	 */
+	public ArbitraryNum(ArbitraryNum num) {
 		super();
-		this.values = n.values;
+		Map<Integer, Integer> tempMap = new HashMap<Integer, Integer>(num.values);
+		this.values = tempMap;
 	}
 
 	/**
-	 * Add two numbers together.
+	 * Add two ArbitraryNums together.
 	 * 
 	 * @param numOne
-	 *            Map containing the first number.
+	 *            ArbitraryNum containing the first number.
 	 * @param numTwo
-	 *            Map containing the second number.
-	 * @return a third map containing the two input maps added together.
+	 *            ArbitraryNum containing the second number.
+	 * @return a third ArbitraryNum containing the two input ArbitraryNums added
+	 *         together.
 	 */
-	public static ArbitraryNum addMaps(ArbitraryNum numOne, ArbitraryNum numTwo) {
+	public static ArbitraryNum add(ArbitraryNum numOne, ArbitraryNum numTwo) {
 		ArbitraryNum numThree = new ArbitraryNum();
 		int size = numOne.values.size();
 		if (numTwo.values.size() > size) {
@@ -70,12 +86,12 @@ public class ArbitraryNum {
 	}
 
 	/**
-	 * Add two numbers together.
+	 * Add two numbers together. This will add the given num to the existing
+	 * value of the ArbitraryNum. This is not a utility function.
 	 * 
-	 * @param mapOne
-	 *            Map containing the first number.
-	 * @param mapTwo
-	 *            Map containing the second number.
+	 * @param num
+	 *            The ArbitraryNum that you would like to add to the existing
+	 *            ArbitraryNum.
 	 * @return a third map containing the two input maps added together.
 	 */
 	public void add(ArbitraryNum num) {
@@ -104,15 +120,15 @@ public class ArbitraryNum {
 	}
 
 	/**
-	 * Multiple a map by a number. This class is only useful is the value of the
-	 * multiplyer will fit into an integer.
+	 * Multiple an ArbitraryNum by a number. This class is only useful is the
+	 * value of the multiplyer will fit into an integer.
 	 * 
 	 * @param num
-	 *            The map you would like to multiply by something.
+	 *            The ArbitraryNum you would like to multiply by something.
 	 * @param multiplyer
 	 *            The value you want to multiply by.
-	 * @return A new map containing the value of a the old map multiplied by a
-	 *         new map.
+	 * @return A new ArbitraryNum containing the value of a the old map
+	 *         multiplied by a given multiplier.
 	 */
 	public static ArbitraryNum multiply(ArbitraryNum num, int multiplyer) {
 
@@ -121,40 +137,6 @@ public class ArbitraryNum {
 		}
 		num = fixMap(num);
 		return num;
-	}
-
-	/**
-	 * This method will simply take in a map and print it out like the numerical
-	 * value it actually represents. A toString() essentially for these math
-	 * maps.
-	 * 
-	 * @param map
-	 *            The map you would like to print out.
-	 * @return A String containing the value stored in the map.
-	 */
-	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		for (int i = values.size(); i > 0; i--) {
-			buffer.append(values.get(i));
-		}
-		return buffer.toString();
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ArbitraryNum other = (ArbitraryNum) obj;
-		if (values == null) {
-			if (other.values != null)
-				return false;
-		} else if (!values.toString().equals(other.values.toString()))
-			return false;
-		return true;
 	}
 
 	/**
@@ -172,7 +154,7 @@ public class ArbitraryNum {
 	 *            The map that you would like to fix up.
 	 * @return A gorgeous map with single digits in all indexes.
 	 */
-	public static ArbitraryNum fixMap(ArbitraryNum num) {
+	private static ArbitraryNum fixMap(ArbitraryNum num) {
 
 		for (int k = 1; k <= num.values.keySet().size(); k++) {
 
@@ -195,12 +177,12 @@ public class ArbitraryNum {
 
 	/**
 	 * The following method will take a string such as "1234" and convert it
-	 * into a map to be used in the mapMath funcitons. For instance "1234" will
-	 * become {1=4,2=3,3=2,4=1}
+	 * into a ArbitraryNum to be used in the ArbitraryNum functions. For
+	 * instance "1234" will become {1=4,2=3,3=2,4=1}
 	 * 
 	 * @param number
 	 *            The string representation of a number.
-	 * @return The map representation of the inputed number.
+	 * @return The ArbitraryNum representation of the inputed number.
 	 */
 	public static ArbitraryNum convertNumberString(String number) {
 		ArbitraryNum numberMap = new ArbitraryNum();
@@ -215,6 +197,11 @@ public class ArbitraryNum {
 		return numberMap;
 	}
 
+	/**
+	 * This method will sum the digits the ArbitraryNum.
+	 * 
+	 * @return The summation of the digits of the ArbitraryNum.
+	 */
 	public long summationOfDigits() {
 		long summation = 0;
 
@@ -224,7 +211,44 @@ public class ArbitraryNum {
 		return summation;
 	}
 
+	/**
+	 * This method will give the length of the ArbiraryNum.
+	 * 
+	 * @return The length of the ArbitraryNum.
+	 */
 	public int length() {
 		return values.size();
+	}
+
+	/**
+	 * Does Eclipse generated object checking. If both of the object are
+	 * ArbitraryNums then it does a String comparison on the toString of the
+	 * ArbitraryNum.
+	 */
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ArbitraryNum other = (ArbitraryNum) obj;
+		if (values == null) {
+			if (other.values != null)
+				return false;
+		} else if (!values.toString().equals(other.values.toString()))
+			return false;
+		return true;
+	}
+
+	/**
+	 * Prints the ArbitraryNum in a readable string format.
+	 */
+	public String toString() {
+		StringBuffer buffer = new StringBuffer();
+		for (int i = values.size(); i > 0; i--) {
+			buffer.append(values.get(i));
+		}
+		return buffer.toString();
 	}
 }

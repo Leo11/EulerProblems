@@ -12,17 +12,17 @@ import resources.ArbitraryNum;
  */
 public class TwentyNine {
 
-	public static Set<String> distinctPowers(int maxA, int maxB) {
+	public static Set<ArbitraryNum> distinctPowers(int maxA, int maxB) {
 
-		Set<String> set = new HashSet<String>();
+		Set<ArbitraryNum> set = new HashSet<ArbitraryNum>();
 
 		for (int a = 2; a <= maxA; a++) {
 
 			ArbitraryNum tempNumber = new ArbitraryNum(a + "");
 
 			for (int b = 2; b <= maxB; b++) {
-				tempNumber = ArbitraryNum.multiply(tempNumber, a);
-				set.add(tempNumber.toString());
+				tempNumber = new ArbitraryNum(ArbitraryNum.multiply(tempNumber, a));
+				set.add(tempNumber);
 			}
 		}
 
@@ -30,11 +30,7 @@ public class TwentyNine {
 	}
 
 	public static void main(String[] args) {
-		Set<String> result = distinctPowers(100, 100);
-		for (String s : result) {
-			System.out.println(s);
-		}
-		System.out.println("Size of result = " + result.size());
+		Set<ArbitraryNum> result = distinctPowers(100, 100);
+		System.out.println("Size of result = " + result.size());	
 	}
-
 }

@@ -38,7 +38,7 @@ public class FibonacciLarge {
 
 			return result;
 		} else {
-			ArbitraryNum fib = ArbitraryNum.addMaps(findNthFib(number - 2),
+			ArbitraryNum fib = ArbitraryNum.add(findNthFib(number - 2),
 					findNthFib(number - 1));
 			lookup.put(number, fib);
 			return fib;

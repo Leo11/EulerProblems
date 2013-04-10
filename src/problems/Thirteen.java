@@ -44,7 +44,7 @@ public class Thirteen {
 	public static String findSummationOfList(List<String> numbers) {
 		ArbitraryNum result = new ArbitraryNum("0");
 		for (String s : numbers) {
-			result = ArbitraryNum.addMaps(result,
+			result = ArbitraryNum.add(result,
 					ArbitraryNum.convertNumberString(s));
 		}
 		return result.toString();
