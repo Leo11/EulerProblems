@@ -36,12 +36,12 @@ public class Sixteen {
 		 * Map of ints, first int is the decimal place of the number, second int
 		 * is the value of that decimal place int. Ex.) 1,1; 2,3; = 13
 		 */
-		ArbitraryNum map = new ArbitraryNum("2");
+		ArbitraryNum num = new ArbitraryNum("2");
 
 		for (int i = 2; i <= power; i++) {
-			map = resources.ArbitraryNum.multiplyMap(map, base);
+			num = resources.ArbitraryNum.multiply(num, base);
 		}
-		return map;
+		return num;
 	}
 
 	public static void main(String[] args) {
@@ -51,9 +51,9 @@ public class Sixteen {
 		int power = 1000;
 		int base = 2;
 
-		ArbitraryNum map = getMapOfNumber(power, base);
+		ArbitraryNum num = getMapOfNumber(power, base);
 
-		System.out.println(map.summationOfDigits());
+		System.out.println(num.summationOfDigits());
 
 		long endTime = System.currentTimeMillis();
 		System.out.println("Time taken to complete = " + (endTime - startTime)

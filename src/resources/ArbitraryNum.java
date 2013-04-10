@@ -18,10 +18,6 @@ public class ArbitraryNum {
 
 	private Map<Integer, Integer> values;
 
-	public ArbitraryNum(Map<Integer, Integer> values) {
-		super();
-		this.values = values;
-	}
 
 	public ArbitraryNum() {
 		super();
@@ -42,35 +38,35 @@ public class ArbitraryNum {
 	/**
 	 * Add two numbers together.
 	 * 
-	 * @param mapOne
+	 * @param numOne
 	 *            Map containing the first number.
-	 * @param mapTwo
+	 * @param numTwo
 	 *            Map containing the second number.
 	 * @return a third map containing the two input maps added together.
 	 */
-	public static ArbitraryNum addMaps(ArbitraryNum mapOne, ArbitraryNum mapTwo) {
-		ArbitraryNum mapThree = new ArbitraryNum();
-		int size = mapOne.values.size();
-		if (mapTwo.values.size() > size) {
-			size = mapTwo.values.size();
+	public static ArbitraryNum addMaps(ArbitraryNum numOne, ArbitraryNum numTwo) {
+		ArbitraryNum numThree = new ArbitraryNum();
+		int size = numOne.values.size();
+		if (numTwo.values.size() > size) {
+			size = numTwo.values.size();
 		}
 
 		for (int i = 1; i <= size; i++) {
 			int one = 0, two = 0, three = 0;
 
-			if (mapOne.values.containsKey(i)) {
-				one = mapOne.values.get(i);
+			if (numOne.values.containsKey(i)) {
+				one = numOne.values.get(i);
 			}
-			if (mapTwo.values.containsKey(i)) {
-				two = mapTwo.values.get(i);
+			if (numTwo.values.containsKey(i)) {
+				two = numTwo.values.get(i);
 			}
-			if (mapThree.values.containsKey(i)) {
-				three = mapThree.values.get(i);
+			if (numThree.values.containsKey(i)) {
+				three = numThree.values.get(i);
 			}
-			mapThree.values.put(i, one + two + three);
-			fixMap(mapThree);
+			numThree.values.put(i, one + two + three);
+			fixMap(numThree);
 		}
-		return mapThree;
+		return numThree;
 	}
 
 	/**
@@ -82,11 +78,11 @@ public class ArbitraryNum {
 	 *            Map containing the second number.
 	 * @return a third map containing the two input maps added together.
 	 */
-	public void add(ArbitraryNum map) {
-		ArbitraryNum mapThree = new ArbitraryNum();
+	public void add(ArbitraryNum num) {
+		ArbitraryNum numThree = new ArbitraryNum();
 		int size = values.size();
-		if (map.values.size() > size) {
-			size = map.values.size();
+		if (num.values.size() > size) {
+			size = num.values.size();
 		}
 
 		for (int i = 1; i <= size; i++) {
@@ -95,36 +91,36 @@ public class ArbitraryNum {
 			if (values.containsKey(i)) {
 				one = values.get(i);
 			}
-			if (map.values.containsKey(i)) {
-				two = map.values.get(i);
+			if (num.values.containsKey(i)) {
+				two = num.values.get(i);
 			}
-			if (mapThree.values.containsKey(i)) {
-				three = mapThree.values.get(i);
+			if (numThree.values.containsKey(i)) {
+				three = numThree.values.get(i);
 			}
-			mapThree.values.put(i, one + two + three);
-			fixMap(mapThree);
+			numThree.values.put(i, one + two + three);
+			fixMap(numThree);
 		}
-		values = mapThree.values;
+		values = numThree.values;
 	}
 
 	/**
 	 * Multiple a map by a number. This class is only useful is the value of the
 	 * multiplyer will fit into an integer.
 	 * 
-	 * @param map
+	 * @param num
 	 *            The map you would like to multiply by something.
 	 * @param multiplyer
 	 *            The value you want to multiply by.
 	 * @return A new map containing the value of a the old map multiplied by a
 	 *         new map.
 	 */
-	public static ArbitraryNum multiplyMap(ArbitraryNum map, int multiplyer) {
+	public static ArbitraryNum multiply(ArbitraryNum num, int multiplyer) {
 
-		for (int j = 1; j <= map.values.keySet().size(); j++) {
-			map.values.put(j, map.values.get(j) * multiplyer);
+		for (int j = 1; j <= num.values.keySet().size(); j++) {
+			num.values.put(j, num.values.get(j) * multiplyer);
 		}
-		map = fixMap(map);
-		return map;
+		num = fixMap(num);
+		return num;
 	}
 
 	/**
@@ -172,29 +168,29 @@ public class ArbitraryNum {
 	 * where this method comes in; it will go through and carry all the digits
 	 * through the map and reform the map with a single digit in each index.
 	 * 
-	 * @param map
+	 * @param num
 	 *            The map that you would like to fix up.
 	 * @return A gorgeous map with single digits in all indexes.
 	 */
-	public static ArbitraryNum fixMap(ArbitraryNum map) {
+	public static ArbitraryNum fixMap(ArbitraryNum num) {
 
-		for (int k = 1; k <= map.values.keySet().size(); k++) {
+		for (int k = 1; k <= num.values.keySet().size(); k++) {
 
-			int temp = map.values.get(k);
+			int temp = num.values.get(k);
 			if (temp > 9) {
 				int remainder = temp % 10;
 				int temp2 = (temp - (temp % 10)) / 10;
-				map.values.put(k, remainder);
+				num.values.put(k, remainder);
 
-				if (map.values.keySet().contains(k + 1)) {
-					int temp3 = map.values.get(k + 1);
-					map.values.put(k + 1, temp2 + temp3);
+				if (num.values.keySet().contains(k + 1)) {
+					int temp3 = num.values.get(k + 1);
+					num.values.put(k + 1, temp2 + temp3);
 				} else {
-					map.values.put(k + 1, temp2);
+					num.values.put(k + 1, temp2);
 				}
 			}
 		}
-		return map;
+		return num;
 	}
 
 	/**

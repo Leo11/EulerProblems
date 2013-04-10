@@ -19,12 +19,12 @@ public class Twenty {
 
 	public static ArbitraryNum solveFactorials(int number) {
 
-		ArbitraryNum map = new ArbitraryNum("1");
+		ArbitraryNum num = new ArbitraryNum("1");
 
 		for (int i = 2; i <= number; i++) {
-			map = resources.ArbitraryNum.multiplyMap(map, i);
+			num = resources.ArbitraryNum.multiply(num, i);
 		}
-		return map;
+		return num;
 	}
 
 	public static void main(String[] args) {

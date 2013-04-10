@@ -19,8 +19,8 @@ public class TwentyFive {
 		boolean found = false;
 		while (!found) {
 			count++;
-			ArbitraryNum map = fib.findNthFib(count);
-			if (map.length() == 1000) {
+			ArbitraryNum num = fib.findNthFib(count);
+			if (num.length() == 1000) {
 				found = true;
 			}
 		}
