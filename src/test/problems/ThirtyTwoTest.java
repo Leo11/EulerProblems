@@ -12,6 +12,7 @@ public class ThirtyTwoTest {
 
 	@Test
 	public void answer() {
-		Assert.assertEquals(45228, Utilities.getSummationOfSet(ThirtyTwo.sumOfProblemThirtyTwo()));
+		Assert.assertEquals(45228,
+				Utilities.getSummationOfSet(ThirtyTwo.sumOfProblemThirtyTwo()));
 	}
 }

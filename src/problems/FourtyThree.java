@@ -23,9 +23,8 @@ import resources.Permutation;
  */
 public class FourtyThree {
 
-	
-	public static Long fourtyThree(){
-		
+	public static Long fourtyThree() {
+
 		Permutation permute = new Permutation();
 		permute.permute("1234567890");
 		List<String> pandigitals = permute.results;
@@ -56,7 +55,7 @@ public class FourtyThree {
 		}
 		return sum;
 	}
-	
+
 	public static void main(String[] args) {
 		System.out.println(fourtyThree());
 	}

@@ -22,7 +22,6 @@ import java.util.TreeSet;
  */
 public class TwentyFour {
 
-	
 	public static String findNthLexicographicPermutation(String digits, int n) {
 
 		resources.Permutation permutationGenerator = new resources.Permutation();

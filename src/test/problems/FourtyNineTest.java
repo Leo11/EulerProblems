@@ -12,7 +12,7 @@ public class FourtyNineTest {
 
 	@Test
 	public void answer() {
-		
+
 		String one = "148748178147";
 		String two = "296962999629";
 

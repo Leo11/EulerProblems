@@ -75,12 +75,11 @@ public class TwentyTwo {
 					list.add(tempList[i]);
 				}
 			}
-			
 
 		} catch (FileNotFoundException e1) {
 			System.out
 					.println("Could not find the specified file for the Sensitive Data list");
-		} finally{
+		} finally {
 			input.close();
 		}
 		return list;

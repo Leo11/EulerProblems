@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
 public class Utilities {
 
 	/**
@@ -162,41 +160,6 @@ public class Utilities {
 			summation += i;
 		}
 		return summation;
-	}
-	/**
-	 * This method will do the following to a map of integers. Say you have a
-	 * map of Integer, Integer where the first integer is the integer place
-	 * value of the second Integer. For instance 1,1; 2,2 = 12. This can be
-	 * useful for massive numbers such as 2^1000000. So what does this method
-	 * do? Say you just multiplied the number 8586885848485834858 by 9. You can
-	 * do this by multiplying each value in the map by 9. But then you get these
-	 * pesky double or triple digit numbers in some of the map indexes. This is
-	 * where this method comes in; it will go through and carry all the digits
-	 * through the map and reform the map with a single digit in each index.
-	 * 
-	 * @param map
-	 *            The map that you would like to fix up.
-	 * @return A gorgeous map with single digits in all indexes.
-	 */
-	public static Map<Integer, Integer> fixMap(Map<Integer, Integer> map) {
-
-		for (int k = 1; k <= map.keySet().size(); k++) {
-
-			int temp = map.get(k);
-			if (temp > 9) {
-				int remainder = temp % 10;
-				int temp2 = (temp - (temp % 10)) / 10;
-				map.put(k, remainder);
-
-				if (map.keySet().contains(k + 1)) {
-					int temp3 = map.get(k + 1);
-					map.put(k + 1, temp2 + temp3);
-				} else {
-					map.put(k + 1, temp2);
-				}
-			}
-		}
-		return map;
 	}
 
 	/**

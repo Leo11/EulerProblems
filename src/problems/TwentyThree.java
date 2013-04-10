@@ -42,8 +42,9 @@ public class TwentyThree {
 	 * is a number where the sum of its divisors is greater than the original
 	 * number. Ex.) 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16.
 	 * 
-	 * @param limit The upper limit for finding abundant numbers.
-	 * @return A list containing abundant numbers below a certain limit. 
+	 * @param limit
+	 *            The upper limit for finding abundant numbers.
+	 * @return A list containing abundant numbers below a certain limit.
 	 */
 	public static List<Long> abundantNumbers(int limit) {
 		List<Long> abundants = new ArrayList<Long>();
@@ -55,7 +56,6 @@ public class TwentyThree {
 		return abundants;
 	}
 
-	
 	public static List<Long> findNonAbundantsSums() {
 		List<Long> nonAbundants = new ArrayList<Long>();
 		List<Long> abundants = abundantNumbers(limit);

@@ -16,7 +16,6 @@ import resources.Utilities;
  */
 public class FourtyOne {
 
-	
 	public static Long largestPandigitalPrime() {
 		Long max = new Long("987654321");
 		Long largestPandigitalPrime = new Long(0);

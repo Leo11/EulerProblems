@@ -1,9 +1,6 @@
 package problems;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import resources.Utilities;
+import resources.ArbitraryNum;
 
 /**
  * Project Euler Problem 16 http://projecteuler.net/problem=16
@@ -33,18 +30,16 @@ public class Sixteen {
 	 * @return A map containing all the values that would be at each decimal
 	 *         place of a number.
 	 */
-	public static Map<Integer, Integer> getMapOfNumber(int power, int base) {
+	public static ArbitraryNum getMapOfNumber(int power, int base) {
 
 		/**
 		 * Map of ints, first int is the decimal place of the number, second int
 		 * is the value of that decimal place int. Ex.) 1,1; 2,3; = 13
 		 */
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		ArbitraryNum map = new ArbitraryNum("2");
 
-		// Put the initial base value in, such as 2.
-		map.put(1, base);
 		for (int i = 2; i <= power; i++) {
-			map = resources.MapMath.multiplyMap(map, base);
+			map = resources.ArbitraryNum.multiplyMap(map, base);
 		}
 		return map;
 	}
@@ -55,10 +50,10 @@ public class Sixteen {
 
 		int power = 1000;
 		int base = 2;
-		
-		Map<Integer, Integer> map = getMapOfNumber(power, base);
-		
-		System.out.println(Utilities.getSummationOfMap(map));
+
+		ArbitraryNum map = getMapOfNumber(power, base);
+
+		System.out.println(map.summationOfDigits());
 
 		long endTime = System.currentTimeMillis();
 		System.out.println("Time taken to complete = " + (endTime - startTime)

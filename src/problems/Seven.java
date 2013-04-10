@@ -25,12 +25,12 @@ public class Seven {
 	public static int nthPrime(int number) {
 
 		/*
-		 *  number of primes we have found;
+		 * number of primes we have found;
 		 */
 		int primeCounter = 0;
 
 		/*
-		 *  current integer we are checking for primality
+		 * current integer we are checking for primality
 		 */
 		int counter = 0;
 		while (primeCounter <= number) {

@@ -1,9 +1,6 @@
 package problems;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import resources.Utilities;
+import resources.ArbitraryNum;
 
 /**
  * Project Euler Problem 20 http://projecteuler.net/problem=20
@@ -20,12 +17,12 @@ import resources.Utilities;
  */
 public class Twenty {
 
-	public static Map<Integer, Integer> solveFactorials(int number) {
+	public static ArbitraryNum solveFactorials(int number) {
 
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		map.put(1, 1);
+		ArbitraryNum map = new ArbitraryNum("1");
+
 		for (int i = 2; i <= number; i++) {
-			map = resources.MapMath.multiplyMap(map, i);
+			map = resources.ArbitraryNum.multiplyMap(map, i);
 		}
 		return map;
 	}
@@ -36,9 +33,8 @@ public class Twenty {
 
 		int factorial = 100;
 
-		int summation = (int) Utilities
-				.getSummationOfMap(solveFactorials(factorial));
-		
+		long summation = solveFactorials(factorial).summationOfDigits();
+
 		System.out.println("The sum of the digits of " + factorial + "! is "
 				+ summation);
 

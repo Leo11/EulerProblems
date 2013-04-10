@@ -26,24 +26,24 @@ import resources.Utilities;
  */
 public class ThirtyTwo {
 
-	
-	 public static Set<Long> sumOfProblemThirtyTwo(){
-		 
-		 Set<Long> result = new HashSet<Long>();
-		 
-		 for(int i = 0; i < 10000; i++){
-			 for(int j = 0; j<10000; j++){
-				 int tempSum = i * j;
-				 String tempString = i + "" + j + "" + tempSum;
-				 if(Utilities.isPandigital("123456789", tempString)){
-					 result.add((long) tempSum);
-				 }
-			 }
-		 }
-		 return result;
-	 }
-	
+	public static Set<Long> sumOfProblemThirtyTwo() {
+
+		Set<Long> result = new HashSet<Long>();
+
+		for (int i = 0; i < 10000; i++) {
+			for (int j = 0; j < 10000; j++) {
+				int tempSum = i * j;
+				String tempString = i + "" + j + "" + tempSum;
+				if (Utilities.isPandigital("123456789", tempString)) {
+					result.add((long) tempSum);
+				}
+			}
+		}
+		return result;
+	}
+
 	public static void main(String[] args) {
-		System.out.println(Utilities.getSummationOfSet(sumOfProblemThirtyTwo()));
+		System.out
+				.println(Utilities.getSummationOfSet(sumOfProblemThirtyTwo()));
 	}
 }

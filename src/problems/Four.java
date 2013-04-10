@@ -61,7 +61,7 @@ public class Four {
 		long startTime = System.currentTimeMillis();
 
 		int digits = 3;
-		
+
 		System.out
 				.println("The largest palindrome made from the product of two-"
 						+ digits + " digit numbers is "

@@ -1,7 +1,6 @@
 package problems;
 
-import java.util.Map;
-
+import resources.ArbitraryNum;
 import resources.FibonacciLarge;
 
 /**
@@ -20,8 +19,8 @@ public class TwentyFive {
 		boolean found = false;
 		while (!found) {
 			count++;
-			Map<Integer, Integer> map = fib.findNthFib(count);
-			if (map.size() == 1000) {
+			ArbitraryNum map = fib.findNthFib(count);
+			if (map.length() == 1000) {
 				found = true;
 			}
 		}

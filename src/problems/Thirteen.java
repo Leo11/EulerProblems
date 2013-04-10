@@ -3,12 +3,10 @@ package problems;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
-import resources.MapMath;
+import resources.ArbitraryNum;
 
 /**
  * Project Euler Problem 13 http://projecteuler.net/problem=13
@@ -44,12 +42,12 @@ public class Thirteen {
 	}
 
 	public static String findSummationOfList(List<String> numbers) {
-		Map<Integer, Integer> result = new HashMap<Integer, Integer>();
-		result.put(1, 0);
+		ArbitraryNum result = new ArbitraryNum("0");
 		for (String s : numbers) {
-			result = MapMath.addMaps(result, MapMath.convertNumberString(s));
+			result = ArbitraryNum.addMaps(result,
+					ArbitraryNum.convertNumberString(s));
 		}
-		return MapMath.printAsNumber(result);
+		return result.toString();
 	}
 
 	public static void main(String[] args) {
