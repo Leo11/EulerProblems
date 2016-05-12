@@ -6,7 +6,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import com.rausch.euler.problems.TwentyNine;
+import com.rausch.euler.problems.twentynine.TwentyNine;
 import com.rausch.euler.resources.ArbitraryNum;
 
 public class TwentyNineTest {

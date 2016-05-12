@@ -4,7 +4,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import com.rausch.euler.problems.FourtyThree;
+import com.rausch.euler.problems.fourtythree.FourtyThree;
 
 public class FourtyThreeTest {
 

@@ -4,7 +4,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import com.rausch.euler.problems.TwentyOne;
+import com.rausch.euler.problems.twentyone.TwentyOne;
 
 public class TwentyOneTest {
 

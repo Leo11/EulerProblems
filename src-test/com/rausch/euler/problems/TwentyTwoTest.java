@@ -10,7 +10,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import com.rausch.euler.problems.TwentyTwo;
+import com.rausch.euler.problems.twentytwo.TwentyTwo;
 
 public class TwentyTwoTest {
 

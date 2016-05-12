@@ -3,7 +3,7 @@ package com.rausch.euler.problems;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.rausch.euler.problems.TwentyFive;
+import com.rausch.euler.problems.twentyfive.TwentyFive;
 
 public class TwentyFiveTest {
 

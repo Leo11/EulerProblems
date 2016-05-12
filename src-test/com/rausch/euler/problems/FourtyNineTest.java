@@ -6,7 +6,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import com.rausch.euler.problems.FourtyNine;
+import com.rausch.euler.problems.fourtynine.FourtyNine;
 
 public class FourtyNineTest {
 
